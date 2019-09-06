@@ -10,12 +10,11 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.4" />
-    <PackageReference Include="Dapper.FluentMap" Version="1.8.0" />
-    <PackageReference Include="Dapper.Mapper" Version="2.0.0" />
-    <PackageReference Include="Dapper.SqlBuilder" Version="2.0.4" />
+    <PackageReference Include="Dapper.Contrib" Version="2.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
+    <PackageReference Include="MySql.Data" Version="8.0.17" />
     <PackageReference Include="Z.Dapper.Plus" Version="1.6.6" />
   </ItemGroup>
 

@@ -1,19 +1,27 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace WeixiaoDemo.common
 {
-    public interface IMyDbContext
+    public class MyDbContext
     {
-        string GetConnection();
-    }
-    public class MyDbContext : IMyDbContext
-    {
-        public string GetConnection()
+        public static IDbConnection Connection;
+        public MyDbContext(string configString)
         {
-            throw new NotImplementedException();
+            if (configString.ToLower().Contains("charset") || configString.ToLower().Contains("port"))
+            {
+                Connection = new MySqlConnection(configString);
+            }
+            else
+            {
+
+                Connection = new SqlConnection(configString);
+            }
         }
     }
 }

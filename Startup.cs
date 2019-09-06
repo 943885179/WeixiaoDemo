@@ -27,6 +27,7 @@ namespace WeixiaoDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ISqlHelper, SqlHelper>();
+            services.Add(new ServiceDescriptor(typeof(MyDbContext), new MyDbContext(Configuration.GetConnectionString("Default"))));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
